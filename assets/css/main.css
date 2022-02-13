@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  --background-body: #53c6ea1a;
+  --background-titulo: #53c6ea;
+  --background-tarefa: #fffffe;
+  --box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+  --cor-fonte: #fffffe;
+  --cor-input: #686868;
+  --modo-escuro-desativado: #fffffe;
+  --modo-escuro-ativado: #0296d1;
+  --circulo-modo-escuro: #cecece;
+  --concluir-tarefa: #008000b2;
+  --deletar-tarefa: #ff000098;
+}
+
+html[data-theme="dark"] {
+  --background-body: #16161a;
+}
+
+body {
+  background: var(--background-body);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.tarefas {
+  margin: 5rem auto;
+  max-width: 35rem;
+}
+
+.tarefas .divisao-titulo {
+  background: var(--background-titulo);
+  border-radius: 0.45rem 0.45rem 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tarefas .divisao-titulo .divisao-logo {
+  color: var(--cor-fonte);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.45rem;
+  font-weight: bold;
+  padding: 0.55rem 1rem;
+}
+
+.tarefas .divisao-titulo .divisao-logo .icone-titulo {
+  margin: 0 0.5rem 0 0;
+}
+
+.tarefas .divisao-titulo .label-checkbox {
+  margin: 0 1rem 0 0;
+}
+
+.tarefas .divisao-titulo .label-checkbox .modo-escuro {
+  border-radius: 20px;
+  background: var(--modo-escuro-desativado);
+  width: 45px;
+  height: 25px;
+  padding: 5px;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+}
+
+.tarefas .divisao-titulo .label-checkbox .modo-escuro .circulo-modo-escuro {
+  border-radius: 50%;
+  background: var(--circulo-modo-escuro);
+  width: 15px;
+  height: 15px;
+}
+
+.tarefas .divisao-titulo .label-checkbox .modo-escuro.modo-escuro-ativo {
+  background: var(--modo-escuro-ativado);
+}
+
+.tarefas .divisao-titulo .label-checkbox .modo-escuro.modo-escuro-ativo .circulo-modo-escuro {
+  background: var(--cor-fonte);
+  margin-left: 20px;
+}
+
+.tarefas .divisao-titulo input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.tarefas .divisao-tarefa {
+  background: var(--background-tarefa);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: 0 0 0.45rem 0.45rem;
+  padding: 0 0 1rem 0;
+}
+
+.tarefas .divisao-tarefa .divisao-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem 0 1.5rem 0;
+}
+
+.tarefas .divisao-tarefa .divisao-input .input {
+  border: 1px solid transparent;
+  border-color: #ddd;
+  border-radius: 0.25rem;
+  color: var(--cor-input);
+  font-size: 1rem;
+  padding: 0 0 0 0.5rem;
+  margin: 5px;
+  width: 250px;
+  height: 32.9px;
+  max-width: 250px;
+  outline: none;
+}
+
+.tarefas .divisao-tarefa .divisao-input .botao-adiciona-tarefa {
+  background-color: var(--background-titulo);
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--cor-fonte);
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1.44rem 0 1.44rem;
+  width: 510px;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0.5rem 1.5rem 0.5rem 1.75rem;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa .nome-tarefa.tarefa-concluida {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa .data-tarefa {
+  font-size: 0.7rem;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa .divisao-botoes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa .divisao-botoes .botao-concluir {
+  background: var(--concluir-tarefa);
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--cor-fonte);
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin: 0 0.5rem 0 0;
+  padding: 0.5rem 0.8rem;
+}
+
+.tarefas .divisao-tarefa .lista-tarefas .tarefa .divisao-botoes .botao-deletar {
+  background: var(--deletar-tarefa);
+  border-radius: 0.25rem;
+  border: none;
+  color: var(--cor-fonte);
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin: 0 0.5rem 0 0;
+  padding: 0.5rem 0.8rem;
+}
+
+@media screen and (max-width: 660px) {
+  .tarefas {
+    margin: 5rem 1rem;
+  }
+  .tarefas .divisao-input {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .tarefas .divisao-tarefa .divisao-input {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .tarefas .divisao-tarefa .divisao-input .input-tarefa {
+    margin: 0 0.5rem 1rem 0;
+  }
+  .tarefas .divisao-tarefa .lista-tarefas .tarefa .divisao-botoes .botao-concluir {
+    font-size: 0.5rem;
+    padding: 0.65rem 0.8rem;
+  }
+  .tarefas .divisao-tarefa .lista-tarefas .tarefa .divisao-botoes .botao-deletar {
+    font-size: 0.5rem;
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+.alertas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.alertas .alerta {
+  display: none;
+  background: var(--cor-fonte);
+  border-radius: 0.5rem;
+  padding: 0.85rem 6rem 0.85rem 1rem;
+  font-size: 0.95rem;
+  max-width: 30rem;
+  margin: 1rem;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.alertas .alerta .icone-alerta {
+  margin: 0 0.5rem 0 0;
+}
+
+.alertas .alerta-campo {
+  border-left: 5px solid #ffd900;
+}
+
+.alertas .alerta-campo.alerta-campo-ativo {
+  display: block;
+}
+
+.alertas .alerta-deletado {
+  border-left: 5px solid #ff000098;
+}
+
+.alertas .alerta-deletado.alerta-deletado-ativo {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */

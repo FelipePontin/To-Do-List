@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    --background-body: #53c6ea1a;
+    --background-titulo: #53c6ea;
+    --background-tarefa: #fffffe;
+    --box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    --cor-fonte: #fffffe;
+    --cor-input: #686868;
+    --modo-escuro-desativado: #fffffe;
+    --modo-escuro-ativado: #0296d1;
+    --circulo-modo-escuro: #cecece;
+    --concluir-tarefa: #008000b2;
+    --deletar-tarefa: #ff000098;
+}
+
+html[data-theme="dark"] {
+    --background-body: #16161a;
+}
+
+body {
+    background: var(--background-body);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}

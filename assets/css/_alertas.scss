@@ -1,0 +1,36 @@
+.alertas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .alerta {
+        display: none;
+        background: var(--cor-fonte);
+        border-radius: 0.5rem;
+        padding: 0.85rem 6rem 0.85rem 1rem;
+        font-size: 0.95rem;
+        max-width: 30rem;
+        margin: 1rem;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    
+        .icone-alerta {
+            margin: 0 0.5rem 0 0;
+        }
+    }
+    
+    .alerta-campo {
+        border-left: 5px solid #ffd900;
+    }
+
+    .alerta-campo.alerta-campo-ativo {
+        display: block;
+    }
+    
+    .alerta-deletado {
+        border-left: 5px solid #ff000098;
+    }
+
+    .alerta-deletado.alerta-deletado-ativo {
+        display: block;
+    }
+}

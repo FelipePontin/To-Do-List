@@ -1,0 +1,189 @@
+.tarefas {
+    margin: 5rem auto;
+    max-width: 35rem;
+
+    .divisao-titulo {
+        background: var(--background-titulo);
+        border-radius: 0.45rem 0.45rem 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .divisao-logo {
+            color: var(--cor-fonte);
+            display: flex;
+            align-items: center;
+            font-size: 1.45rem;
+            font-weight: bold;
+            padding: 0.55rem 1rem;
+
+            .icone-titulo {
+                margin: 0 0.5rem 0 0;
+            }
+        }
+        .label-checkbox {
+            margin: 0 1rem 0 0;
+            .modo-escuro {
+                border-radius: 20px;
+                background: var(--modo-escuro-desativado);
+                width: 45px;
+                height: 25px;
+                padding: 5px;
+                transition: 0.15s ease-in-out;
+
+                .circulo-modo-escuro {
+                    border-radius: 50%;
+                    background: var(--circulo-modo-escuro);
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .modo-escuro.modo-escuro-ativo {
+                background: var(--modo-escuro-ativado);
+
+                .circulo-modo-escuro {
+                    background: var(--cor-fonte);
+                    margin-left: 20px;
+                }
+            }
+        }
+        input[type="checkbox"] {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+    }
+
+    .divisao-tarefa {
+        background: var(--background-tarefa);
+        box-shadow: var(--box-shadow);
+        border-radius: 0 0 0.45rem 0.45rem;
+        padding: 0 0 1rem 0;
+
+        .divisao-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 0 1.5rem 0;
+
+            .input {
+                border: 1px solid transparent;
+                border-color: #ddd;
+                border-radius: 0.25rem;
+                color: var(--cor-input);
+                font-size: 1rem;
+                padding: 0 0 0 0.5rem;
+                margin: 5px;
+                width: 250px;
+                height: 32.9px;
+                max-width: 250px;
+                outline: none;
+            }
+
+            .botao-adiciona-tarefa {
+                background-color: var(--background-titulo);
+                border-radius: 0.25rem;
+                border: none;
+                color: var(--cor-fonte);
+                cursor: pointer;
+                font-family: "Poppins", sans-serif;
+                font-weight: bold;
+                padding: 0.5rem 1rem;
+                margin: 0.5rem 1.44rem 0 1.44rem;
+                width: 510px;
+            }
+        }
+
+        .lista-tarefas {
+            .tarefa {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin: 0.5rem 1.5rem 0.5rem 1.75rem;
+
+                .nome-tarefa.tarefa-concluida {
+                    text-decoration: line-through;
+                    opacity: 0.5;
+                }
+
+                .data-tarefa {
+                    font-size: 0.7rem;
+                }
+
+                .divisao-botoes {
+                    display: flex;
+                    align-items: center;
+
+                    .botao-concluir {
+                        background: var(--concluir-tarefa);
+                        border-radius: 0.25rem;
+                        border: none;
+                        color: var(--cor-fonte);
+                        cursor: pointer;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: bold;
+                        font-size: 0.85rem;
+                        margin: 0 0.5rem 0 0;
+                        padding: 0.5rem 0.8rem;
+                    }
+
+                    .botao-deletar {
+                        background: var(--deletar-tarefa);
+                        border-radius: 0.25rem;
+                        border: none;
+                        color: var(--cor-fonte);
+                        cursor: pointer;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: bold;
+                        font-size: 0.85rem;
+                        margin: 0 0.5rem 0 0;
+                        padding: 0.5rem 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .tarefas {
+        margin: 5rem 1rem;
+
+        .divisao-input {
+            margin: 0 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .tarefas {
+        .divisao-tarefa {
+            .divisao-input {
+                flex-wrap: wrap;
+
+                .input-tarefa {
+                    margin: 0 0.5rem 1rem 0;
+                }
+            }
+        }
+
+        .divisao-tarefa {
+            .lista-tarefas {
+                .tarefa {
+                    .divisao-botoes {
+                        .botao-concluir {
+                            font-size: 0.5rem;
+                            padding: 0.65rem 0.8rem;
+                        }
+
+                        .botao-deletar {
+                            font-size: 0.5rem;
+                            padding: 0.65rem 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
