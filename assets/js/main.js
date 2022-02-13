@@ -36,7 +36,6 @@ const adicionaTarefa = (event) => {
         divisaoBotoes.appendChild(btnDeleta())
 
         inputTarefa.value = ""
-        data.reset()
     }
 }
 
