@@ -1,6 +1,6 @@
 const alerta = (nome, classe) => {
     nome.classList.add(classe)
-        setTimeout(() => {
+        setInterval(() => {
             nome.classList.remove(classe)
         }, 5000)
 }
